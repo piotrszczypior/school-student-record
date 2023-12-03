@@ -11,8 +11,8 @@ To run this application, follow these simple steps:
 
 1. **Clone the repository (if applicable)**
     ```bash
-    git clone 
-    cd 
+    git clone https://github.com/piotrszczypior/school-student-record.git
+    cd school-student-record
     ```
 
 2. **Start the docker image**
