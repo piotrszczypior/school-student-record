@@ -9,7 +9,7 @@ Before you begin, ensure you have both Docker and Docker Compose installed on yo
 
 To run this application, follow these simple steps:
 
-1. **Clone the repository (if applicable)**
+1. **Clone the repository**
     ```bash
     git clone https://github.com/piotrszczypior/school-student-record.git
     cd school-student-record
