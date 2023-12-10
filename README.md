@@ -18,7 +18,7 @@ To run this application, follow these simple steps:
 2. **Start the docker image**
     Run the following command in the root directory of the project (where `docker-compose.yml` is located):
     ```bash
-    docker-compose up
+    docker-compose up -d
     ```
     This command starts all the services defined in your `docker-compose.yml` file.
 
