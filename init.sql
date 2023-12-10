@@ -485,6 +485,14 @@ GRANT SELECT ON Subject TO Student;
 GRANT SELECT ON Subjects_Teachers TO Student;
 GRANT SELECT ON Classroom TO Student;
 
+GRANT SELECT ON StudentGrades TO Student;
+GRANT SELECT ON TeacherAttendance TO Student;
+GRANT SELECT ON TeacherGrades TO Student;
+GRANT SELECT ON ClassStudents TO Student;
+GRANT SELECT ON StudentLessons TO Student;
+GRANT SELECT ON StudentAverageGrade TO Student;
+
+
 GRANT UPDATE ON "User" TO Student;
 GRANT UPDATE ON Address TO Student;
 
@@ -547,6 +555,12 @@ GRANT ALL ON Grade TO Teacher;
 GRANT ALL ON Lesson TO Teacher;
 GRANT ALL ON Attendance TO Teacher;
 
+GRANT SELECT ON StudentGrades TO Teacher;
+GRANT SELECT ON TeacherAttendance TO Teacher;
+GRANT SELECT ON TeacherGrades TO Teacher;
+GRANT SELECT ON ClassStudents TO Teacher;
+GRANT SELECT ON StudentLessons TO Teacher;
+GRANT SELECT ON StudentAverageGrade TO Teacher;
 
 GRANT USAGE ON SEQUENCE grade_id_seq TO Teacher;
 
