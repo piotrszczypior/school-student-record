@@ -72,3 +72,13 @@ LEFT JOIN Grade g ON l.ID = g.ID AND g.StudentUsersID = (
     FROM "User"
     WHERE Login = current_user
 );
+
+-- Widok z średnimi ocenami uczniów
+CREATE VIEW StudentAverageGrade AS
+SELECT
+    s.UsersID AS "StudentUsersID",
+    AVG(g."Grade value") AS "Average grade"
+FROM
+    Student s
+JOIN Grade g ON s.UsersID = g.StudentUsersID
+GROUP BY s.UsersID;

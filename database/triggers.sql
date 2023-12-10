@@ -2,13 +2,10 @@
 CREATE OR REPLACE FUNCTION calculate_avg_grade()
 RETURNS TRIGGER AS $$
 BEGIN
-    UPDATE Student
-    SET "Average grade" = (
-        SELECT AVG("Grade value")
-        FROM Grade
-        WHERE StudentUsersID = NEW.StudentUsersID
-    )
-    WHERE UsersID = NEW.StudentUsersID;
+    INSERT INTO StudentAverageGrade ("StudentUsersID", "Average grade")
+    VALUES (NEW.StudentUsersID, NEW."Grade value")
+    ON CONFLICT ("StudentUsersID") DO UPDATE
+    SET "Average grade" = EXCLUDED."Average grade";
 
     RETURN NEW;
 END;
