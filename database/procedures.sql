@@ -15,7 +15,7 @@ BEGIN
 
     -- Dodaj nowego ucznia
     INSERT INTO Student ("First name", "Last name", "Date of birth", 
-                        ClassesID, UsersID, AddressID)
+                        ClassID, UsersID, AddressID)
     VALUES (first_name, last_name, date_of_birth, class_id, user_id, 1);
 END;
 $$;
@@ -27,7 +27,7 @@ CREATE OR REPLACE PROCEDURE move_student_to_class(
 ) AS
 $$
 BEGIN
-    UPDATE Student SET ClassesID = new_class_id WHERE UsersID = student_id;
+    UPDATE Student SET ClassID = new_class_id WHERE UsersID = student_id;
 END;
 $$ LANGUAGE plpgsql;
 

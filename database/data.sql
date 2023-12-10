@@ -68,7 +68,7 @@ INSERT INTO Class (Name) VALUES
 ('1C'),
 ('3A');
 
-INSERT INTO Student ("First name", "Last name", "Date of birth", ClassesID, UsersID, AddressID) VALUES
+INSERT INTO Student ("First name", "Last name", "Date of birth", ClassID, UsersID, AddressID) VALUES
 ('Tomasz', 'Zieliński', '2005-04-10', 1, 11, 1),
 ('Magdalena', 'Szymańska', '2006-07-22', 1, 12, 2),
 ('Kamil', 'Wójcik', '2005-01-15', 1, 13, 3),
@@ -121,7 +121,7 @@ INSERT INTO Classroom ("Room name") VALUES
 ('Sala 109'),
 ('Sala 110');
 
-INSERT INTO Lesson (Topic, "Date", ClassesID, SubjectsID, ClassroomID, TeacherUsersID) VALUES
+INSERT INTO Lesson (Topic, "Date", ClassID, SubjectsID, ClassroomID, TeacherUsersID) VALUES
 ('Wprowadzenie do algebra', '2023-09-01', 1, 1, 1, 21),
 ('Gramatyka i ortografia', '2023-09-02', 2, 2, 2, 22),
 ('Podstawy historii Polski', '2023-09-03', 1, 3, 3, 23),

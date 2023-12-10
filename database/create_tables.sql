@@ -61,12 +61,12 @@ CREATE TABLE Lesson (
   ID             SERIAL NOT NULL,
   Topic          varchar(50),
   "Date"         date NOT NULL,
-  ClassesID      int4 NOT NULL,
+  ClassID      int4 NOT NULL,
   SubjectsID     int4 NOT NULL,
   ClassroomID    int4 NOT NULL,
   TeacherUsersID int4 NOT NULL,
   PRIMARY KEY (ID),
-  CONSTRAINT FK_Lesson_Class FOREIGN KEY (ClassesID) REFERENCES Class (ID),
+  CONSTRAINT FK_Lesson_Class FOREIGN KEY (ClassID) REFERENCES Class (ID),
   CONSTRAINT FK_Lesson_Subject FOREIGN KEY (SubjectsID) REFERENCES Subject (ID),
   CONSTRAINT FK_Lesson_Classroom FOREIGN KEY (ClassroomID) REFERENCES Classroom (ID),
   CONSTRAINT FK_Lesson_Teacher FOREIGN KEY (TeacherUsersID) REFERENCES Teacher (UsersID)
@@ -76,11 +76,11 @@ CREATE TABLE Student (
   "First name"    varchar(50) NOT NULL,
   "Last name"     varchar(50) NOT NULL,
   "Date of birth" date NOT NULL,
-  ClassesID       int4 NOT NULL,
+  ClassID       int4 NOT NULL,
   UsersID         int4 NOT NULL,
   AddressID       int4 NOT NULL,
   PRIMARY KEY (UsersID),
-  CONSTRAINT FK_Student_Class FOREIGN KEY (ClassesID) REFERENCES Class (ID),
+  CONSTRAINT FK_Student_Class FOREIGN KEY (ClassID) REFERENCES Class (ID),
   CONSTRAINT FK_Student_Address FOREIGN KEY (AddressID) REFERENCES Address (ID),
   CONSTRAINT FK_Student_User FOREIGN KEY (UsersID) REFERENCES "User" (ID)
 );
