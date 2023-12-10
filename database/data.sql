@@ -41,7 +41,7 @@ INSERT INTO Address (City, Street, "Post code", "Street number", "Flat number") 
 ('Szczecin', 'Wojska Polskiego', '70-100', 3, 7),
 ('Katowice', 'Słowackiego', '40-200', 7, 12),
 ('Kraków', 'Krakowska', '30-123', 14, 9),
-('Gdynia', 'Hryniewickiego', '81-111', 22, 11),
+('Gdynia', 'Hryniewickiego', '81-111', 22, 11);
 
 
 INSERT INTO Administrator ("First name", "Last name", UsersID) VALUES
@@ -55,6 +55,18 @@ INSERT INTO Administrator ("First name", "Last name", UsersID) VALUES
 ('Katarzyna', 'Kowalczyk', 8),
 ('Tomasz', 'Zając', 9),
 ('Magdalena', 'Szymańska', 10);
+
+INSERT INTO Class (Name) VALUES
+('1A'),
+('2B'),
+('3C'),
+('1B'),
+('2A'),
+('3B'),
+('1D'),
+('2C'),
+('1C'),
+('3A');
 
 INSERT INTO Student ("First name", "Last name", "Date of birth", ClassesID, UsersID, AddressID) VALUES
 ('Tomasz', 'Zieliński', '2005-04-10', 1, 11, 1),
@@ -80,67 +92,6 @@ INSERT INTO Teacher ("First name", "Last name", "Date of birth", "Academic degre
 ('Kinga', 'Kowalska', '1979-07-10', 'Profesor', 29, NULL, 1),
 ('Grzegorz', 'Dąbrowski', '1976-09-15', 'Brak', 30, NULL, 10);
 
-
-INSERT INTO Attendance ("Date", Present, LessonsID, StudentUsersID) VALUES
-('2023-09-01', true, 1, 11),
-('2023-09-02', false, 1, 12),
-('2023-09-01', true, 2, 13),
-('2023-09-02', true, 2, 14),
-('2023-09-03', false, 3, 15),
-('2023-09-03', true, 3, 16),
-('2023-09-04', true, 4, 17),
-('2023-09-04', true, 4, 18),
-('2023-09-05', true, 5, 19),
-('2023-09-05', false, 5, 20);
-
-INSERT INTO Class (Name) VALUES
-('Matematyka'),
-('Język polski'),
-('Historia'),
-('Fizyka'),
-('Chemia'),
-('Biologia'),
-('Informatyka'),
-('Wychowanie fizyczne'),
-('Geografia'),
-('Angielski');
-
-INSERT INTO Classroom ("Room name") VALUES
-('Sala 101'),
-('Sala 102'),
-('Sala 103'),
-('Sala 104'),
-('Sala 105'),
-('Sala 106'),
-('Sala 107'),
-('Sala 108'),
-('Sala 109'),
-('Sala 110');
-
-INSERT INTO Grade ("Grade value", SubjectsID, "Date of modification", TeacherUsersID, StudentUsersID) VALUES
-(5.0, 1, '2023-09-05', 21, 11),
-(4.5, 2, '2023-09-06', 22, 12),
-(3.0, 3, '2023-09-07', 23, 13),
-(4.0, 4, '2023-09-08', 24, 14),
-(5.0, 5, '2023-09-09', 25, 15),
-(4.0, 6, '2023-09-10', 26, 16),
-(3.5, 7, '2023-09-11', 27, 17),
-(4.5, 8, '2023-09-12', 28, 18),
-(4.0, 9, '2023-09-13', 29, 19),
-(3.5, 10, '2023-09-14', 30, 20);
-
-INSERT INTO Lesson (Topic, "Date", ClassesID, SubjectsID, ClassroomID, TeacherUsersID) VALUES
-('Wprowadzenie do algebra', '2023-09-01', 1, 1, 1, 21),
-('Gramatyka i ortografia', '2023-09-02', 2, 2, 2, 22),
-('Podstawy historii Polski', '2023-09-03', 1, 3, 3, 23),
-('Ruch i siły fizyczne', '2023-09-04', 1, 4, 4, 24),
-('Podstawy chemii organicznej', '2023-09-05', 2, 5, 5, 25),
-('Budowa komórek', '2023-09-06', 3, 6, 6, 26),
-('Programowanie w Pythonie', '2023-09-07', 1, 7, 7, 27),
-('Trening sportowy', '2023-09-08', 2, 8, 8, 28),
-('Krajobraz i kultura geograficzna', '2023-09-09', 3, 9, 9, 29),
-('Angielski dla zaawansowanych', '2023-09-10', 3, 10, 10, 30);
-
 INSERT INTO Subject (Name) VALUES
 ('Matematyka'),
 ('Język polski'),
@@ -157,6 +108,56 @@ INSERT INTO Subject (Name) VALUES
 ('Technika'),
 ('Religia'),
 ('Wiedza o społeczeństwie');
+
+INSERT INTO Classroom ("Room name") VALUES
+('Sala 101'),
+('Sala 102'),
+('Sala 103'),
+('Sala 104'),
+('Sala 105'),
+('Sala 106'),
+('Sala 107'),
+('Sala 108'),
+('Sala 109'),
+('Sala 110');
+
+INSERT INTO Lesson (Topic, "Date", ClassesID, SubjectsID, ClassroomID, TeacherUsersID) VALUES
+('Wprowadzenie do algebra', '2023-09-01', 1, 1, 1, 21),
+('Gramatyka i ortografia', '2023-09-02', 2, 2, 2, 22),
+('Podstawy historii Polski', '2023-09-03', 1, 3, 3, 23),
+('Ruch i siły fizyczne', '2023-09-04', 1, 4, 4, 24),
+('Podstawy chemii organicznej', '2023-09-05', 2, 5, 5, 25),
+('Budowa komórek', '2023-09-06', 3, 6, 6, 26),
+('Programowanie w Pythonie', '2023-09-07', 1, 7, 7, 27),
+('Trening sportowy', '2023-09-08', 2, 8, 8, 28),
+('Krajobraz i kultura geograficzna', '2023-09-09', 3, 9, 9, 29),
+('Angielski dla zaawansowanych', '2023-09-10', 3, 10, 10, 30);
+
+
+INSERT INTO Attendance ("Date", Present, LessonsID, StudentUsersID) VALUES
+('2023-09-01', true, 1, 11),
+('2023-09-02', false, 1, 12),
+('2023-09-01', true, 2, 13),
+('2023-09-02', true, 2, 14),
+('2023-09-03', false, 3, 15),
+('2023-09-03', true, 3, 16),
+('2023-09-04', true, 4, 17),
+('2023-09-04', true, 4, 18),
+('2023-09-05', true, 5, 19),
+('2023-09-05', false, 5, 20);
+
+INSERT INTO Grade ("Grade value", SubjectsID, "Date of modification", TeacherUsersID, StudentUsersID) VALUES
+(5.0, 1, '2023-09-05', 21, 11),
+(4.5, 2, '2023-09-06', 22, 12),
+(3.0, 3, '2023-09-07', 23, 13),
+(4.0, 4, '2023-09-08', 24, 14),
+(5.0, 5, '2023-09-09', 25, 15),
+(4.0, 6, '2023-09-10', 26, 16),
+(3.5, 7, '2023-09-11', 27, 17),
+(4.5, 8, '2023-09-12', 28, 18),
+(4.0, 9, '2023-09-13', 29, 19),
+(3.5, 10, '2023-09-14', 30, 20);
+
 
 INSERT INTO Subjects_Teachers (SubjectsID, TeacherUsersID) VALUES
 (1, 21),
