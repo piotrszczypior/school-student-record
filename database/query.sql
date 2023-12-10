@@ -14,4 +14,4 @@ WHERE c."Room name" = 'Sala 101';
 
 SELECT s."First name", s."Last name", c.Name AS Class
 FROM Student s
-JOIN Class c ON s.ClassesID = c.ID;
+JOIN Class c ON s.ClassID = c.ID;

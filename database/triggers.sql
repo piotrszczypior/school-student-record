@@ -55,7 +55,7 @@ RETURNS TRIGGER AS $$
 BEGIN
     INSERT INTO Attendance ("Date", Present, LessonsID, StudentUsersID)
     SELECT NEW."Date", FALSE, NEW.ID, s.UsersID
-    FROM Student s WHERE s.ClassesID = NEW.ClassesID;
+    FROM Student s WHERE s.ClassID = NEW.ClassID;
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
