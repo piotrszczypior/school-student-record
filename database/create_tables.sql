@@ -77,7 +77,7 @@ CREATE TABLE Student (
   "First name"    varchar(50) NOT NULL,
   "Last name"     varchar(50) NOT NULL,
   "Date of birth" date NOT NULL,
-  ClassesID       int4 NOT NULL,
+  ClassID       int4 NOT NULL,
   UsersID         int4 NOT NULL,
   AddressID       int4 NOT NULL,
   PRIMARY KEY (UsersID),
