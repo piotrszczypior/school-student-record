@@ -60,7 +60,6 @@ CREATE TABLE Teacher (
 CREATE TABLE Lesson (
   ID             SERIAL NOT NULL,
   Topic          varchar(50),
-  CreatedBy      int4 NOT NULL,
   "Date"         date NOT NULL,
   ClassesID      int4 NOT NULL,
   SubjectsID     int4 NOT NULL,
@@ -90,7 +89,6 @@ CREATE TABLE Attendance (
   ID             SERIAL NOT NULL,
   "Date"         date NOT NULL,
   Present        bool NOT NULL,
-  CreatedBy      int4 NOT NULL,
   LessonsID      int4 NOT NULL,
   StudentUsersID int4 NOT NULL,
   PRIMARY KEY (ID),
@@ -103,7 +101,6 @@ CREATE TABLE Grade (
   "Grade value"          numeric(3, 2) NOT NULL,
   SubjectsID             int4 NOT NULL,
   "Date of modification" date NOT NULL,
-  CreatedBy              int4 NOT NULL,
   TeacherUsersID         int4 NOT NULL,
   StudentUsersID         int4 NOT NULL,
   PRIMARY KEY (ID),
